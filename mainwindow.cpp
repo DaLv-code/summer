@@ -18,14 +18,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
 void MainWindow::on_userButton_clicked()
 {
     this->close();
     user userWindow;
     userWindow.setModal(true);
     userWindow.exec();
-    userWindow.setGeometry(0,0,681,342);
     this->show();
 }
 
@@ -35,7 +33,6 @@ void MainWindow::on_touristButton_clicked()
     tourist touristWindow;
     touristWindow.setModal(true);
     touristWindow.exec();
-    touristWindow.setGeometry(0,0,681,342);
     this->show();
 }
 
@@ -45,7 +42,6 @@ void MainWindow::on_facilityButton_clicked()
     facility facilityWindow;
     facilityWindow.setModal(true);
     facilityWindow.exec();
-    facilityWindow.setGeometry(0,0,681,342);
     this->show();
 }
 
@@ -55,7 +51,6 @@ void MainWindow::on_guideButton_clicked()
     guide guideWindow;
     guideWindow.setModal(true);
     guideWindow.exec();
-    guideWindow.setGeometry(0,0,681,342);
     this->show();
 }
 
@@ -65,6 +60,5 @@ void MainWindow::on_reservationButton_clicked()
     reservation reservWindow;
     reservWindow.setModal(true);
     reservWindow.exec();
-    reservWindow.setGeometry(0,0,681,342);
     this->show();
 }

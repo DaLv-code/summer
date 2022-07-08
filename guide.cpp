@@ -2,7 +2,6 @@
 #include "ui_guide.h"
 #include "split.h"
 
-
 guide::guide(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::guide)
@@ -36,7 +35,6 @@ void guide::on_pushButton_2_clicked() //가이드 추가
     QMessageBox::information(nullptr,"Succsefull","가이드가 추가되었습니다");
     on_pushButton_clicked();
 }
-
 
 void guide::on_pushButton_3_clicked() //가이드 수정
 {

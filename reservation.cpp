@@ -39,6 +39,9 @@ void reservation::on_pushButton_2_clicked() //예약 삭제
     qDebug()<<QString::fromStdString(result[0]);
     if(result[0]!="[아이디]")
     {
+        SQL="INSERT INTO delreservationTB VALUES('"+result[0]+"','"+result[1]+"','"+result[2]+"','"+result[3]+"','"+result[4]+"')";
+        query.exec(QString::fromStdString(SQL));
+
         SQL="DELETE FROM reservationTB WHERE userId= '"+result[0]+"' and beach = '"+result[1]+"' and facility = '"+result[2]+"' and guideName = '"+result[3]+"'";
         query.exec(QString::fromStdString(SQL));
         QMessageBox::information(nullptr,"Succsefull","예약 삭제가 완료되었습니다");
@@ -58,5 +61,23 @@ void reservation::on_pushButton_3_clicked() //예약일 수정
         query.exec(QString::fromStdString(SQL));
         QMessageBox::information(nullptr,"Succsefull","예약일이 수정되었습니다");
         on_pushButton_clicked();
+    }
+}
+
+void reservation::on_pushButton_4_clicked() //취소된 예약 조회
+{
+    ui->listWidget->clear();
+    SQL="SELECT * FROM delreservationTB";
+    query.exec(QString::fromStdString(SQL));
+    rec=query.record();
+    ui->listWidget->addItem("[아이디]\t[여행지]\t[숙소명]\t[가이드]\t[예약일]");
+    while(query.next())
+    {
+        ui->listWidget->addItem(
+                    query.value(rec.indexOf("userId")).toString()+"\t"+
+                    query.value(rec.indexOf("beach")).toString()+"\t"+
+                    query.value(rec.indexOf("facility")).toString()+"\t"+
+                    query.value(rec.indexOf("guideName")).toString()+"\t"+
+                    query.value(rec.indexOf("date")).toString());
     }
 }

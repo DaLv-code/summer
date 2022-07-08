@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>예약 관리</string>
   </property>
   <widget class="QListWidget" name="listWidget">
    <property name="geometry">
@@ -78,11 +78,25 @@
     <string>변경날짜 입력</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>240</y>
+     <width>211</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>취소된 예약 조회</string>
+   </property>
+  </widget>
   <zorder>lineEdit</zorder>
   <zorder>listWidget</zorder>
   <zorder>pushButton</zorder>
   <zorder>pushButton_2</zorder>
   <zorder>pushButton_3</zorder>
+  <zorder>pushButton_4</zorder>
  </widget>
  <resources/>
  <connections/>
