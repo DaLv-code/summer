@@ -20,16 +20,18 @@ user_infor::~user_infor()
 void user_infor::on_change_name_btn_clicked()
 {
     std::string Get_name=ui->change_name->text().toStdString();
-    SQL = "UPDATE userTB SET userName = '"+ui->change_name->text().toStdString()+"'WHERE userId = '"+Get_id+"'";
+    SQL = "UPDATE userTB SET userName = '"+ui->change_name->text().toStdString()+"' WHERE userId = '"+Get_id+"'";
     query.exec(QString::fromStdString(SQL));
+    ui->change_name->clear();
     QMessageBox::information(this,"저기어때","이름이 변경되었습니다.");
 }
 
 void user_infor::on_change_pw_btn_clicked()
 {
     std::string Get_pw=ui->change_pw->text().toStdString();
-    SQL = "UPDATE userTB SET userPw = '"+ui->change_pw->text().toStdString()+"'WHERE userId = '"+Get_id+"'";
+    SQL = "UPDATE userTB SET userPw = '"+ui->change_pw->text().toStdString()+"' WHERE userId = '"+Get_id+"'";
     query.exec(QString::fromStdString(SQL));
+    ui->change_pw->clear();
     QMessageBox::information(this,"저기어때","비밀번호가 변경되었습니다.");
 }
 

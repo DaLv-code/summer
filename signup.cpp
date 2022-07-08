@@ -54,7 +54,5 @@ void signup::on_idcheck_btn_clicked()
 
 void signup::on_back_btn_clicked()
 {
-    this->hide();
-    Login login;
-    this->show();
+    this->close();
 }

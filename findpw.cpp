@@ -26,7 +26,5 @@ void findpw::on_findpw_btn_clicked()
 
 void findpw::on_back_btn_clicked()
 {
-    this->hide();
-    Login login;
-    this->show();
+    this->close();
 }

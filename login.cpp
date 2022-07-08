@@ -37,11 +37,15 @@ void Login::on_login_btn_clicked()
         }
         else
         {
+            ui->get_id->clear();
+            ui->get_pw->clear();
             QMessageBox::warning(this,"저기어때","아이디 또는 비밀번호를 잘못 입력했습니다.");
         }
     }
     else
     {
+        ui->get_id->clear();
+        ui->get_pw->clear();
         QMessageBox::warning(this,"저기어때", "<준회원>등급만 로그인이 가능합니다.");
     }
 }
@@ -53,6 +57,8 @@ void Login::on_signup_btn_clicked()
     signup.setModal(true);
     signup.exec();
     this->show();
+    ui->get_id->clear();
+    ui->get_pw->clear();
 }
 
 void Login::on_find_btn_clicked()
